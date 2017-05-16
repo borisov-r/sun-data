@@ -79,8 +79,8 @@ def createGroup(subset,coordX,coordY,stepY,ff):
     rows.append(svgGroupStart)
     
     for i in range(startRow,endRow):
-       svgRow = "<text " + setXcoord(coordX,0) + " " + setYcoord(stepY,prev) + ">" + ff[i] + "</text>"
-       setColor(ff[i])
+       color = setColor(ff[i])
+       svgRow = "<text " + setXcoord(coordX,0) + " " + setYcoord(stepY,prev) + " " +  color + ">" + ff[i] + "</text>"
        prev = prev + stepY
        rows.append(svgRow)
 
@@ -161,31 +161,31 @@ def setColor(ff):
     cc_to_int = int(cc[2])
     
     if 0 <= cc_to_int <= 19:
-        print(lux_0_20)
+        return (lux_0_20)
     
     if 20 <= cc_to_int <= 49: 
-        print(lux_20_50) 
+        return (lux_20_50) 
     
     if 50 <= cc_to_int <= 79: 
-        print(lux_50_80) 
+        return (lux_50_80) 
  
     if 80 <= cc_to_int <= 99: 
-        print(lux_80_100) 
+        return (lux_80_100) 
  
     if 100 <= cc_to_int <= 319: 
-        print(lux_100_320) 
+        return (lux_100_320) 
  
     if 320 <= cc_to_int <= 499: 
-        print(lux_320_500) 
+        return (lux_320_500) 
   
     if 500 <= cc_to_int <= 999: 
-        print(lux_500_1000) 
+        return (lux_500_1000) 
  
     if 1000 <= cc_to_int <= 9999: 
-        print(lux_1k_10k) 
+        return (lux_1k_10k) 
    
     if cc_to_int > 9999: 
-        print(lux_10k) 
+        return (lux_10k) 
     
     return 0 
 
